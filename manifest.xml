@@ -4,7 +4,7 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
-    <Id>987fcdeb-1234-5678-9abc-def123456789</Id>
+    <Id>05c2e1c9-3e1d-4f1b-a134-96c62c8a01a9</Id>
     <Version>1.0.0.1</Version>
     <ProviderName>Mykhailo Kovtun (mykhailo.kovtun@streamtele.com)</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
