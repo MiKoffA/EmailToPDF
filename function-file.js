@@ -1,7 +1,4 @@
 Office.onReady(() => {
-    // Реєструємо функцію для використання в надбудові
-    Office.actions.associate("convertToPDF", convertToPDF);
-    
     console.log("Office.js is ready");
     try {
         Office.context.ui.messageParent(JSON.stringify({ message: "Office.js is ready" }));
