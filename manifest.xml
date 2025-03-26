@@ -9,9 +9,9 @@
     <ProviderName>Mykhailo Kovtun</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Email to PDF" />
-    <Description DefaultValue="Converts email to PDF." />
+    <Description DefaultValue="Перетворює електронний лист у PDF." />
     <IconUrl DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
-    <SupportUrl DefaultValue="https://example.com" />
+    <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
     <AppDomains>
         <AppDomain>https://api.pdf.co</AppDomain>
     </AppDomains>
@@ -81,7 +81,7 @@
                 <bt:String id="buttonTitle" DefaultValue="Convert to PDF" />
             </bt:ShortStrings>
             <bt:LongStrings>
-                <bt:String id="buttonDesc" DefaultValue="Converts the email to a PDF file." />
+                <bt:String id="buttonDesc" DefaultValue="Перетворює електронний лист у PDF." />
             </bt:LongStrings>
         </Resources>
     </VersionOverrides>
