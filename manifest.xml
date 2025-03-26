@@ -5,7 +5,7 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
     <Id>987fcdeb-1234-5678-9abc-def123456789</Id>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0.1</Version>
     <ProviderName>Mykhailo Kovtun (mykhailo.kovtun@streamtele.com)</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Email to PDF" />
