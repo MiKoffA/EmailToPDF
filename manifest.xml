@@ -5,7 +5,7 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
     <Id>123e4567-e89b-12d3-a456-426614174000</Id>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.2</Version>
     <ProviderName>Mykhailo Kovtun</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Email to PDF" />
