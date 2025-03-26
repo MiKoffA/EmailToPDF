@@ -4,14 +4,14 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
-    <Id>123e4567-e89b-12d3-a456-426614174000</Id>
+    <Id>987fcdeb-1234-5678-9abc-def123456789</Id>
     <Version>1.0.0.0</Version>
     <ProviderName>Mykhailo Kovtun</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Email to PDF" />
     <Description DefaultValue="Converts email to PDF." />
     <IconUrl DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
-    <SupportUrl DefaultValue="https://example.com" />
+    <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
     <AppDomains>
         <AppDomain>https://api.pdf.co</AppDomain>
     </AppDomains>
@@ -33,6 +33,7 @@
             <Host xsi:type="MailHost">
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
+                    <!-- Додаємо SourceLocation -->
                     <ExtensionPoint xsi:type="MessageReadCommandSurface">
                         <OfficeTab id="TabDefault">
                             <Group id="msgReadGroup">
@@ -50,6 +51,7 @@
                                     </Icon>
                                     <Action xsi:type="ExecuteFunction">
                                         <FunctionName>convertToPDF</FunctionName>
+                                        <SourceLocation resid="taskPaneUrl" />
                                     </Action>
                                 </Control>
                             </Group>
@@ -66,6 +68,7 @@
             </bt:Images>
             <bt:Urls>
                 <bt:Url id="functionFile" DefaultValue="https://MiKoffA.github.io/EmailToPDF/function-file.js" />
+                <bt:Url id="taskPaneUrl" DefaultValue="https://MiKoffA.github.io/EmailToPDF/index.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="PDF Tools" />
