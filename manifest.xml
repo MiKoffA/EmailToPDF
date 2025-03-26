@@ -6,10 +6,10 @@
            xsi:type="MailApp">
     <Id>987fcdeb-1234-5678-9abc-def123456789</Id>
     <Version>1.0.0.0</Version>
-    <ProviderName>Mykhailo Kovtun</ProviderName>
+    <ProviderName>Mykhailo Kovtun (mykhailo.kovtun@streamtele.com)</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Email to PDF" />
-    <Description DefaultValue="Converts email to PDF." />
+    <Description DefaultValue="Перетворює електронний лист у PDF." />
     <IconUrl DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
     <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
     <AppDomains>
@@ -23,14 +23,6 @@
             <Set Name="Mailbox" MinVersion="1.1" />
         </Sets>
     </Requirements>
-    <FormSettings>
-        <Form xsi:type="ItemRead">
-            <DesktopSettings>
-                <SourceLocation DefaultValue="https://MiKoffA.github.io/EmailToPDF/" />
-                <RequestedHeight>250</RequestedHeight>
-            </DesktopSettings>
-        </Form>
-    </FormSettings>
     <Permissions>ReadWriteMailbox</Permissions>
     <Rule xsi:type="RuleCollection" Mode="Or">
         <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -81,7 +73,7 @@
                 <bt:String id="buttonTitle" DefaultValue="Convert to PDF" />
             </bt:ShortStrings>
             <bt:LongStrings>
-                <bt:String id="buttonDesc" DefaultValue="Converts the email to a PDF file." />
+                <bt:String id="buttonDesc" DefaultValue="Перетворює електронний лист у PDF." />
             </bt:LongStrings>
         </Resources>
     </VersionOverrides>
