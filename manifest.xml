@@ -23,6 +23,14 @@
             <Set Name="Mailbox" MinVersion="1.1" />
         </Sets>
     </Requirements>
+    <FormSettings>
+        <Form xsi:type="ItemRead">
+            <DesktopSettings>
+                <SourceLocation DefaultValue="https://MiKoffA.github.io/EmailToPDF/" />
+                <RequestedHeight>250</RequestedHeight>
+            </DesktopSettings>
+        </Form>
+    </FormSettings>
     <Permissions>ReadWriteMailbox</Permissions>
     <Rule xsi:type="RuleCollection" Mode="Or">
         <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
