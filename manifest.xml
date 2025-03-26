@@ -5,8 +5,8 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
     <Id>123e4567-e89b-12d3-a456-426614174000</Id>
-    <Version>1.0.0.2</Version>
-    <ProviderName>Mykhailo Kovtun</ProviderName>
+    <Version>1.0.0.3</Version>
+    <ProviderName>Mykhailo Kovtun (mykhailo.kovtun@streamtele.com)</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Email to PDF" />
     <Description DefaultValue="Перетворює електронний лист у PDF." />
