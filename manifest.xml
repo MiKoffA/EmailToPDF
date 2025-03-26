@@ -33,7 +33,6 @@
             <Host xsi:type="MailHost">
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
-                    <!-- Додаємо SourceLocation -->
                     <ExtensionPoint xsi:type="MessageReadCommandSurface">
                         <OfficeTab id="TabDefault">
                             <Group id="msgReadGroup">
@@ -51,7 +50,6 @@
                                     </Icon>
                                     <Action xsi:type="ExecuteFunction">
                                         <FunctionName>convertToPDF</FunctionName>
-                                        <SourceLocation resid="taskPaneUrl" />
                                     </Action>
                                 </Control>
                             </Group>
@@ -68,7 +66,6 @@
             </bt:Images>
             <bt:Urls>
                 <bt:Url id="functionFile" DefaultValue="https://MiKoffA.github.io/EmailToPDF/function-file.js" />
-                <bt:Url id="taskPaneUrl" DefaultValue="https://MiKoffA.github.io/EmailToPDF/index.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="PDF Tools" />
