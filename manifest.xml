@@ -13,7 +13,7 @@
   <DisplayName DefaultValue="EmailToPDF (test)" />
   <Description DefaultValue="Converts selected email to PDF using pdf.co." />
   <IconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF//icons/icon-80.png"/>
+  <HighResolutionIconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-80.png"/>
   <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
 
   <!-- Дозволи, необхідні надбудові -->
