@@ -4,16 +4,16 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
-    <Id>123e4567-e89b-12d3-a456-426614174002</Id> <!-- Ще раз змінимо ID -->
-    <Version>1.0.0.3</Version> <!-- Оновлюємо версію -->
+    <Id>123e4567-e89b-12d3-a456-426614174003</Id> <!-- Ще раз змінимо ID -->
+    <Version>1.0.0.4</Version> <!-- Оновлюємо версію -->
     <ProviderName>Mykhailo Kovtun</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
-    <DisplayName DefaultValue="Email to PDF (Test)" /> <!-- Додамо Test до назви -->
+    <DisplayName DefaultValue="Email to PDF (Test 4)" /> <!-- Додамо Test 4 до назви -->
     <Description DefaultValue="Converts email to PDF." />
     <IconUrl DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
     <SupportUrl DefaultValue="https://example.com" />
     <AppDomains>
-        <AppDomain>https://api.pdf.co</AppDomain> <!-- Залишимо про всяк випадок -->
+        <AppDomain>https://api.pdf.co</AppDomain>
     </AppDomains>
     <Hosts>
         <Host Name="Mailbox" />
@@ -25,7 +25,6 @@
     </Requirements>
     <!-- FormSettings ВИДАЛЕНО -->
     <Permissions>ReadWriteMailbox</Permissions>
-    <!-- Rule залишено, воно потрібне для появи кнопки -->
     <Rule xsi:type="RuleCollection" Mode="Or">
         <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
     </Rule>
@@ -35,7 +34,7 @@
         <Hosts>
             <Host xsi:type="MailHost">
                 <DesktopFormFactor>
-                    <!-- !!! ЗМІНЕНО URL: додано ?v=3 для обходу кешу !!! -->
+                    <!-- !!! ПОВЕРНУЛИ URL без параметра ?v=... !!! -->
                     <FunctionFile resid="functionFile" />
                     <ExtensionPoint xsi:type="MessageReadCommandSurface">
                         <OfficeTab id="TabDefault">
@@ -69,8 +68,8 @@
                 <bt:Image id="icon80" DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
             </bt:Images>
             <bt:Urls>
-                 <!-- !!! ЗМІНЕНО URL: додано ?v=3 для обходу кешу !!! -->
-                <bt:Url id="functionFile" DefaultValue="https://MiKoffA.github.io/EmailToPDF/function-file.js?v=3" />
+                 <!-- !!! ПОВЕРНУЛИ URL без параметра ?v=... !!! -->
+                <bt:Url id="functionFile" DefaultValue="https://MiKoffA.github.io/EmailToPDF/function-file.js" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="PDF Tools" />
