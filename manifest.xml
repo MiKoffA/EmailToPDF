@@ -4,14 +4,15 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
-    <Id>123e4567-e89b-12d3-a456-426614174003</Id> <!-- Ще раз змінимо ID -->
-    <Version>1.0.0.4</Version> <!-- Оновлюємо версію -->
+    <!-- !!! Згенеровано абсолютно новий унікальний ID !!! -->
+    <Id>b4a8f0a0-8a5a-4e3d-9a7c-1e9b1c6e7d8f</Id>
+    <Version>1.0.0.5</Version> <!-- Оновлюємо версію -->
     <ProviderName>Mykhailo Kovtun</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
-    <DisplayName DefaultValue="Email to PDF (Test 4)" /> <!-- Додамо Test 4 до назви -->
+    <DisplayName DefaultValue="Email to PDF (Test 5)" /> <!-- Додамо Test 5 до назви -->
     <Description DefaultValue="Converts email to PDF." />
     <IconUrl DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
-    <SupportUrl DefaultValue="https://example.com" />
+    <!-- <SupportUrl DefaultValue="https://example.com" /> --> <!-- Тимчасово видалено -->
     <AppDomains>
         <AppDomain>https://api.pdf.co</AppDomain>
     </AppDomains>
@@ -23,18 +24,16 @@
             <Set Name="Mailbox" MinVersion="1.3" />
         </Sets>
     </Requirements>
-    <!-- FormSettings ВИДАЛЕНО -->
     <Permissions>ReadWriteMailbox</Permissions>
     <Rule xsi:type="RuleCollection" Mode="Or">
         <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
     </Rule>
-    <DisableEntityHighlighting>false</DisableEntityHighlighting>
+    <!-- <DisableEntityHighlighting>false</DisableEntityHighlighting> --> <!-- Тимчасово видалено -->
 
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
         <Hosts>
             <Host xsi:type="MailHost">
                 <DesktopFormFactor>
-                    <!-- !!! ПОВЕРНУЛИ URL без параметра ?v=... !!! -->
                     <FunctionFile resid="functionFile" />
                     <ExtensionPoint xsi:type="MessageReadCommandSurface">
                         <OfficeTab id="TabDefault">
@@ -68,7 +67,6 @@
                 <bt:Image id="icon80" DefaultValue="https://MiKoffA.github.io/EmailToPDF/icon-80.png" />
             </bt:Images>
             <bt:Urls>
-                 <!-- !!! ПОВЕРНУЛИ URL без параметра ?v=... !!! -->
                 <bt:Url id="functionFile" DefaultValue="https://MiKoffA.github.io/EmailToPDF/function-file.js" />
             </bt:Urls>
             <bt:ShortStrings>
