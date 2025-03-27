@@ -12,8 +12,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="EmailToPDF (test)" />
   <Description DefaultValue="Converts selected email to PDF using pdf.co." />
-  <IconUrl DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-80.png"/>
+  <IconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF//icons/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF//icons/icon-80.png"/>
   <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
 
   <!-- Дозволи, необхідні надбудові -->
@@ -37,13 +37,13 @@
       <!-- Іконки, які використовуються на стрічці -->
       <Resources>
         <bt:Images>
-          <bt:Image id="icon16" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-16.png" />
-          <bt:Image id="icon32" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-32.png" />
-          <bt:Image id="icon80" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-80.png" />
+          <bt:Image id="icon16" DefaultValue="https://mikoffa.github.io/EmailToPDF//icons/icon-16.png" />
+          <bt:Image id="icon32" DefaultValue="https://mikoffa.github.io/EmailToPDF//icons/icon-32.png" />
+          <bt:Image id="icon80" DefaultValue="https://mikoffa.github.io/EmailToPDF//icons/icon-80.png" />
         </bt:Images>
         <bt:Urls>
           <!-- URL до HTML-файлу бічної панелі -->
-          <bt:Url id="taskpaneUrl" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/taskpane.html" />
+          <bt:Url id="taskpaneUrl" DefaultValue="https://mikoffa.github.io/EmailToPDF//taskpane.html" />
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="groupLabel" DefaultValue="PDF Actions"/>
@@ -118,7 +118,7 @@
       <!-- Дозволені домени для API-запитів -->
       <AppDomains>
         <AppDomain>https://api.pdf.co</AppDomain>
-        <AppDomain>!!!YOUR_GITHUB_PAGES_DOMAIN!!!</AppDomain> <!-- Додамо на Кроці 5 -->
+        <AppDomain>mikoffa.github.io</AppDomain> <!-- Додамо на Кроці 5 -->
       </AppDomains>
 
     </VersionOverrides>
