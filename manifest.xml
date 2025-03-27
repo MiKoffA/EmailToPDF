@@ -5,72 +5,57 @@
            xmlns:mail="http://schemas.microsoft.com/office/mailappversionoverrides"
            xsi:type="MailApp">
 
-  <!-- Основна інформація про надбудову -->
-  <!-- Переконайтесь, що тут ваш актуальний GUID -->
-  <Id>{ac443d48-c590-4f60-8b57-448233fbc7a0}</Id>
+  <!-- 1. Базова інформація -->
+  <Id>{9fafc18c-90b6-4037-8e06-195047dba046}</Id> <!-- Переконайтесь, що GUID ваш -->
   <Version>1.0.0.0</Version>
   <ProviderName>MiKoffA</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="EmailToPDF (test)" />
-  <Description DefaultValue="Converts selected email to PDF using pdf.co." />
+  <DisplayName DefaultValue="EmailToPDF (Minimal Test)" />
+  <Description DefaultValue="Test validation with minimal standard structure."/>
   <IconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-80.png"/>
   <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
 
-  <!-- Дозволи, необхідні надбудові (Повернуто на правильне місце) -->
+  <!-- 2. Дозволи (на стандартному місці) -->
   <Permissions>ReadWriteMailbox</Permissions>
 
-  <!-- Налаштування для сучасних версій Outlook -->
+  <!-- 3. Правило активації (повернули для сумісності) -->
+   <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+
+  <!-- 4. Перевизначення для сучасних версій -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
 
-      <!-- !!! <Requirements> ТИМЧАСОВО ВИДАЛЕНО !!! -->
+      <!-- 4.1 Вимоги -->
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.1"> <!-- Мінімальна версія для Mailbox API -->
+          <bt:Set Name="Mailbox" />
+        </bt:Sets>
+      </Requirements>
 
-      <!-- !!! <AppDomains> ТИМЧАСОВО ВИДАЛЕНО !!! -->
-
-      <!-- Іконки, які використовуються на стрічці -->
-      <Resources>
-        <bt:Images>
-          <bt:Image id="icon16" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-16.png" />
-          <bt:Image id="icon32" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-32.png" />
-          <bt:Image id="icon80" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-80.png" />
-        </bt:Images>
-        <bt:Urls>
-          <!-- URL до HTML-файлу бічної панелі -->
-          <bt:Url id="taskpaneUrl" DefaultValue="https://mikoffa.github.io/EmailToPDF/taskpane.html" />
-        </bt:Urls>
-        <bt:ShortStrings>
-          <bt:String id="groupLabel" DefaultValue="PDF Actions"/>
-          <bt:String id="buttonLabel" DefaultValue="Convert to PDF" />
-          <bt:String id="tooltip" DefaultValue="Open PDF conversion panel" />
-        </bt:ShortStrings>
-        <bt:LongStrings>
-          <bt:String id="taskpaneDescription" DefaultValue="Choose a method to convert this email to PDF." />
-        </bt:LongStrings>
-      </Resources>
-
-      <!-- Визначення для хоста (Outlook) -->
+      <!-- 4.2 Хости -->
       <Hosts>
-        <Host xsi:type="MailHost">
+        <Host xsi:type="MailHost"> <!-- Перевірено тип 'MailHost' -->
           <DesktopFormFactor>
-            <!-- Визначення кнопки на стрічці для десктопних версій -->
             <ExtensionPoint xsi:type="MessageReadCommandSurface">
               <OfficeTab id="TabDefault">
-                <Group id="msgReadGroup">
-                  <Label resid="groupLabel" />
-                  <Control xsi:type="Button" id="msgReadOpenPaneButton">
-                    <Label resid="buttonLabel" />
+                <Group id="msgReadGroup"> <!-- Використовуємо оригінальні ID -->
+                  <Label resid="groupLabel"/>
+                  <Control xsi:type="Button" id="msgReadOpenPaneButton"> <!-- Використовуємо оригінальні ID -->
+                    <Label resid="buttonLabel"/>
                     <Supertip>
-                      <Title resid="buttonLabel" />
-                      <Description resid="tooltip" />
+                      <Title resid="buttonLabel"/>
+                      <Description resid="tooltip"/>
                     </Supertip>
                     <Icon>
-                      <bt:Image size="16" resid="icon16" />
-                      <bt:Image size="32" resid="icon32" />
-                      <bt:Image size="80" resid="icon80" />
+                      <bt:Image size="16" resid="icon16"/>
+                      <bt:Image size="32" resid="icon32"/>
+                      <bt:Image size="80" resid="icon80"/>
                     </Icon>
                     <Action xsi:type="ShowTaskpane">
-                      <SourceLocation resid="taskpaneUrl" />
+                      <SourceLocation resid="taskpaneUrl"/>
                       <Title resid="buttonLabel"/>
                     </Action>
                   </Control>
@@ -79,23 +64,16 @@
             </ExtensionPoint>
           </DesktopFormFactor>
 
-           <!-- Додамо також для мобільної/веб версії -->
+          <!-- Мобільний фактор -->
            <MobileFormFactor>
               <ExtensionPoint xsi:type="MessageReadCommandSurface">
-                  <Group id="mobileMsgRead">
+                  <Group id="mobileMsgRead"> <!-- Використовуємо оригінальні ID -->
                       <Label resid="groupLabel"/>
-                      <Control xsi:type="MobileButton" id="TaskPaneBtn">
+                      <Control xsi:type="MobileButton" id="TaskPaneBtn"> <!-- Використовуємо оригінальні ID -->
                           <Label resid="buttonLabel"/>
-                          <Icon>
-                             <bt:Image size="25" scale="1" resid="icon32"/>
-                             <bt:Image size="25" scale="2" resid="icon32"/>
-                             <bt:Image size="25" scale="3" resid="icon32"/>
-                             <bt:Image size="32" scale="1" resid="icon32"/>
-                             <bt:Image size="32" scale="2" resid="icon32"/>
-                             <bt:Image size="32" scale="3" resid="icon32"/>
-                             <bt:Image size="48" scale="1" resid="icon80"/>
-                             <bt:Image size="48" scale="2" resid="icon80"/>
-                             <bt:Image size="48" scale="3" resid="icon80"/>
+                           <Icon>
+                             <bt:Image size="32" resid="icon32"/> <!-- Використовуємо resid посилання -->
+                             <bt:Image size="80" resid="icon80"/>
                           </Icon>
                           <Action xsi:type="ShowTaskpane">
                               <SourceLocation resid="taskpaneUrl"/>
@@ -108,6 +86,32 @@
 
         </Host>
       </Hosts>
+
+      <!-- 4.3 Ресурси -->
+      <Resources>
+        <bt:Images>
+          <bt:Image id="icon16" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-16.png"/>
+          <bt:Image id="icon32" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-32.png"/>
+          <bt:Image id="icon80" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="taskpaneUrl" DefaultValue="https://mikoffa.github.io/EmailToPDF/taskpane.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="groupLabel" DefaultValue="PDF Actions"/>
+          <bt:String id="buttonLabel" DefaultValue="Convert to PDF"/>
+          <bt:String id="tooltip" DefaultValue="Open PDF conversion panel"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <!-- Порожній, оскільки довгі строки не використовувались в кнопці -->
+        </bt:LongStrings>
+      </Resources>
+
+      <!-- 4.4 Дозволені домени (необхідні для роботи) -->
+      <AppDomains>
+          <AppDomain>https://api.pdf.co</AppDomain>
+          <AppDomain>mikoffa.github.io</AppDomain>
+      </AppDomains>
 
     </VersionOverrides>
   </VersionOverrides>
