@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
@@ -6,7 +6,8 @@
            xsi:type="MailApp">
 
   <!-- Основна інформація про надбудову -->
-  <Id>{ac443d48-c590-4f60-8b57-448233fbc7a0}</Id> <!-- Унікальний ID надбудови -->
+  <!-- Використовуйте новий GUID, якщо ви його змінювали, або залиште старий, якщо ні -->
+  <Id>{ac443d48-c590-4f60-8b57-448233fbc7a0}</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>MiKoffA</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
@@ -19,10 +20,7 @@
   <!-- Дозволи, необхідні надбудові -->
   <Permissions>ReadWriteMailbox</Permissions>
 
-  <!-- Правила активації (тут не потрібні, оскільки це кнопка) -->
-  <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
-  </Rule>
+  <!-- !!! СЕКЦІЮ <Rule> ВИДАЛЕНО !!! -->
 
   <!-- Налаштування для сучасних версій Outlook -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -124,3 +122,4 @@
     </VersionOverrides>
   </VersionOverrides>
 </OfficeApp>
+   
