@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mail="http://schemas.microsoft.com/office/mailappversionoverrides"
+           xsi:type="MailApp">
+
+  <!-- Основна інформація про надбудову -->
+  <Id>{1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d}</Id> <!-- Унікальний ID надбудови -->
+  <Version>1.0.0.0</Version>
+  <ProviderName>MiKoffA</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="EmailToPDF (test)" />
+  <Description DefaultValue="Converts selected email to PDF using pdf.co." />
+  <IconUrl DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-80.png"/>
+  <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
+
+  <!-- Дозволи, необхідні надбудові -->
+  <Permissions>ReadWriteMailbox</Permissions>
+
+  <!-- Правила активації (тут не потрібні, оскільки це кнопка) -->
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+
+  <!-- Налаштування для сучасних версій Outlook -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.5">
+          <bt:Set Name="Mailbox" />
+        </bt:Sets>
+      </Requirements>
+
+      <!-- Іконки, які використовуються на стрічці -->
+      <Resources>
+        <bt:Images>
+          <bt:Image id="icon16" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-16.png" />
+          <bt:Image id="icon32" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-32.png" />
+          <bt:Image id="icon80" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/icons/icon-80.png" />
+        </bt:Images>
+        <bt:Urls>
+          <!-- URL до HTML-файлу бічної панелі -->
+          <bt:Url id="taskpaneUrl" DefaultValue="!!!YOUR_GITHUB_PAGES_URL!!!/taskpane.html" />
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="groupLabel" DefaultValue="PDF Actions"/>
+          <bt:String id="buttonLabel" DefaultValue="Convert to PDF" />
+          <bt:String id="tooltip" DefaultValue="Open PDF conversion panel" />
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="taskpaneDescription" DefaultValue="Choose a method to convert this email to PDF." />
+        </bt:LongStrings>
+      </Resources>
+
+      <!-- Визначення для хоста (Outlook) -->
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <!-- Визначення кнопки на стрічці для десктопних версій -->
+            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="msgReadGroup">
+                  <Label resid="groupLabel" />
+                  <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                    <Label resid="buttonLabel" />
+                    <Supertip>
+                      <Title resid="buttonLabel" />
+                      <Description resid="tooltip" />
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon16" />
+                      <bt:Image size="32" resid="icon32" />
+                      <bt:Image size="80" resid="icon80" />
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="taskpaneUrl" />
+                      <Title resid="buttonLabel"/>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+
+           <!-- Додамо також для мобільної/веб версії -->
+           <MobileFormFactor>
+              <ExtensionPoint xsi:type="MessageReadCommandSurface">
+                  <Group id="mobileMsgRead">
+                      <Label resid="groupLabel"/>
+                      <Control xsi:type="MobileButton" id="TaskPaneBtn">
+                          <Label resid="buttonLabel"/>
+                          <Icon>
+                             <bt:Image size="25" scale="1" resid="icon32"/>
+                             <bt:Image size="25" scale="2" resid="icon32"/>
+                             <bt:Image size="25" scale="3" resid="icon32"/>
+                             <bt:Image size="32" scale="1" resid="icon32"/>
+                             <bt:Image size="32" scale="2" resid="icon32"/>
+                             <bt:Image size="32" scale="3" resid="icon32"/>
+                             <bt:Image size="48" scale="1" resid="icon80"/>
+                             <bt:Image size="48" scale="2" resid="icon80"/>
+                             <bt:Image size="48" scale="3" resid="icon80"/>
+                          </Icon>
+                          <Action xsi:type="ShowTaskpane">
+                              <SourceLocation resid="taskpaneUrl"/>
+                              <Title resid="buttonLabel"/>
+                          </Action>
+                      </Control>
+                  </Group>
+              </ExtensionPoint>
+           </MobileFormFactor>
+
+        </Host>
+      </Hosts>
+
+      <!-- Дозволені домени для API-запитів -->
+      <AppDomains>
+        <AppDomain>https://api.pdf.co</AppDomain>
+        <AppDomain>!!!YOUR_GITHUB_PAGES_DOMAIN!!!</AppDomain> <!-- Додамо на Кроці 5 -->
+      </AppDomains>
+
+    </VersionOverrides>
+  </VersionOverrides>
+</OfficeApp>
