@@ -17,20 +17,16 @@
   <HighResolutionIconUrl DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-80.png"/>
   <SupportUrl DefaultValue="https://github.com/MiKoffA/EmailToPDF" />
 
-  <!-- !!! ЕЛЕМЕНТ <Permissions> ВИДАЛЕНО ЗВІДСИ !!! -->
+  <!-- Дозволи, необхідні надбудові (Повернуто на правильне місце) -->
+  <Permissions>ReadWriteMailbox</Permissions>
 
   <!-- Налаштування для сучасних версій Outlook -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
 
-      <!-- !!! ДОЗВОЛИ <Permissions> ПЕРЕМІЩЕНО СЮДИ !!! -->
-      <Permissions>ReadWriteMailbox</Permissions>
+      <!-- !!! <Requirements> ТИМЧАСОВО ВИДАЛЕНО !!! -->
 
-      <Requirements>
-        <bt:Sets DefaultMinVersion="1.5">
-          <bt:Set Name="Mailbox" />
-        </bt:Sets>
-      </Requirements>
+      <!-- !!! <AppDomains> ТИМЧАСОВО ВИДАЛЕНО !!! -->
 
       <!-- Іконки, які використовуються на стрічці -->
       <Resources>
@@ -40,6 +36,7 @@
           <bt:Image id="icon80" DefaultValue="https://mikoffa.github.io/EmailToPDF/icons/icon-80.png" />
         </bt:Images>
         <bt:Urls>
+          <!-- URL до HTML-файлу бічної панелі -->
           <bt:Url id="taskpaneUrl" DefaultValue="https://mikoffa.github.io/EmailToPDF/taskpane.html" />
         </bt:Urls>
         <bt:ShortStrings>
@@ -111,12 +108,6 @@
 
         </Host>
       </Hosts>
-
-      <!-- Дозволені домени для API-запитів -->
-      <AppDomains>
-        <AppDomain>https://api.pdf.co</AppDomain>
-        <AppDomain>mikoffa.github.io</AppDomain>
-      </AppDomains>
 
     </VersionOverrides>
   </VersionOverrides>
