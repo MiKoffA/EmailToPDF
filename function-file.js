@@ -1,39 +1,53 @@
-// --- START OF SIMPLIFIED function-file.js FOR TESTING ---
+// --- START OF REFINED SIMPLIFIED function-file.js FOR TESTING ---
 
-// Проста тестова функція
-function convertToPDF(event) {
-    console.log("TEST: convertToPDF function started!"); // Лог для налагодження
+console.log("TEST V2: function-file.js - Script execution started."); // Найперший лог
 
-    // Спроба показати базове сповіщення
+// Функція, що викликається кнопкою
+function convertToPDF_Handler(event) {
+    console.log("TEST V2: convertToPDF_Handler function EXECUTED!"); // Чи викликається функція?
+
+    // Спроба показати сповіщення як індикатор успіху
     try {
-        Office.context.mailbox.item.notificationMessages.addAsync("testLaunch", {
+        console.log("TEST V2: Attempting to add notification...");
+        Office.context.mailbox.item.notificationMessages.addAsync("testLaunchV2", {
             type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
-            message: "Тест: Функція запущена!",
-            icon: "icon16", // Використовуємо ID іконки з маніфесту
+            message: "Тест V2: Функція успішно запущена!",
+            icon: "icon16",
             persistent: false
         }, function(asyncResult) {
             if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                console.error("TEST: Failed to add notification: " + asyncResult.error.message);
+                console.error("TEST V2: Failed to add notification: " + asyncResult.error.message);
+            } else {
+                console.log("TEST V2: Notification added successfully.");
             }
-            // Обов'язково завершуємо подію
-            console.log("TEST: Completing event.");
+            // Завершуємо подію в будь-якому випадку
+            console.log("TEST V2: Completing event inside notification callback.");
             event.completed();
         });
     } catch (e) {
-        // Якщо навіть notificationMessages не доступний, просто логуємо і завершуємо
-        console.error("TEST: Error during notification attempt: " + e.message);
-        event.completed();
+        console.error("TEST V2: Error during notification attempt: " + e.message);
+        console.log("TEST V2: Completing event inside catch block.");
+        event.completed(); // Завершуємо навіть при помилці сповіщення
     }
 }
 
-// Реєстрація функції при завантаженні скрипта
-Office.onReady(() => {
-    console.log("TEST: Office.js is ready. Registering function...");
-    // Реєструємо функцію для обробки дії кнопки
-    window.convertToPDF = convertToPDF; // Зробимо її глобальною для надійності
-    console.log("TEST: convertToPDF function registered globally.");
+// Реєстрація функції при готовності Office.js
+Office.onReady((info) => {
+    console.log("TEST V2: Office.onReady callback executed. Host: " + info.host + ", Platform: " + info.platform);
+
+    // Стандартний спосіб реєстрації функції для ExecuteFunction
+    try {
+        if (!Office.actions) {
+            Office.actions = {};
+        }
+        Office.actions.convertToPDF = convertToPDF_Handler;
+        console.log("TEST V2: Function 'convertToPDF' registered under Office.actions.");
+    } catch (e) {
+         console.error("TEST V2: Error registering function: " + e.message);
+    }
+
 });
 
-console.log("TEST: Simplified function-file.js loaded."); // Лог для перевірки завантаження файлу
+console.log("TEST V2: function-file.js - Script execution finished."); // Останній лог у файлі
 
-// --- END OF SIMPLIFIED function-file.js FOR TESTING ---
+// --- END OF REFINED SIMPLIFIED function-file.js FOR TESTING ---
